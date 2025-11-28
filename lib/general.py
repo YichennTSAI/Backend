@@ -42,5 +42,11 @@ def fail(error = None) -> dict:
         'error': error
     }
 
+def require(request, f: list) -> bool:
+    for i in f:
+        if i not in request.values:
+            return False
+    return True
+
 if __name__ == '__main__':
     print(ok('ouob'))
